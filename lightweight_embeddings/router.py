@@ -34,7 +34,7 @@ class EmbeddingRequest(BaseModel):
         default=TextModelType.MULTILINGUAL_E5_SMALL.value,
         description=(
             "Which model ID to use? "
-            "Text options: ['multilingual-e5-small', 'multilingual-e5-base', 'multilingual-e5-large', "
+            "Text options: ['intfloat/multilingual-e5-large-instruct', 'intfloat/multilingual-e5-large','multilingual-e5-small', 'multilingual-e5-base', 'multilingual-e5-large', "
             "'snowflake-arctic-embed-l-v2.0', 'paraphrase-multilingual-MiniLM-L12-v2', "
             "'paraphrase-multilingual-mpnet-base-v2', 'bge-m3']. "
             "Image option: ['siglip-base-patch16-256-multilingual']."
@@ -54,7 +54,7 @@ class RankRequest(BaseModel):
         default=TextModelType.MULTILINGUAL_E5_SMALL.value,
         description=(
             "Model ID for the queries. "
-            "Can be a text or image model (e.g. 'siglip-base-patch16-256-multilingual' for images)."
+            "Can be a text or image model (e.g. 'intfloat/multilingual-e5-large-instruct' for text, 'siglip-base-patch16-256-multilingual' for images)."
         ),
     )
     queries: Union[str, List[str]] = Field(
