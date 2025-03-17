@@ -31,6 +31,8 @@ class TextModelType(str, Enum):
     MULTILINGUAL_E5_SMALL = "multilingual-e5-small"
     MULTILINGUAL_E5_BASE = "multilingual-e5-base"
     MULTILINGUAL_E5_LARGE = "multilingual-e5-large"
+    INTFLOAT_MULTILINGUAL_E5_LARGE = "intfloat/multilingual-e5-large"
+    INTFLOAT_MULTILINGUAL_E5_LARGE_INSTRUCT = "intfloat/multilingual-e5-large-instruct"
     SNOWFLAKE_ARCTIC_EMBED_L_V2 = "snowflake-arctic-embed-l-v2.0"
     PARAPHRASE_MULTILINGUAL_MINILM_L12_V2 = "paraphrase-multilingual-MiniLM-L12-v2"
     PARAPHRASE_MULTILINGUAL_MPNET_BASE_V2 = "paraphrase-multilingual-mpnet-base-v2"
@@ -52,6 +54,8 @@ class MaxModelLength(str, Enum):
     MULTILINGUAL_E5_SMALL = 512
     MULTILINGUAL_E5_BASE = 512
     MULTILINGUAL_E5_LARGE = 512
+    INTFLOAT_MULTILINGUAL_E5_LARGE = 1024
+    INTFLOAT_MULTILINGUAL_E5_LARGE_INSTRUCT = 1024
     SNOWFLAKE_ARCTIC_EMBED_L_V2 = 8192
     PARAPHRASE_MULTILINGUAL_MINILM_L12_V2 = 128
     PARAPHRASE_MULTILINGUAL_MPNET_BASE_V2 = 128
@@ -93,6 +97,12 @@ class ModelConfig:
             TextModelType.MULTILINGUAL_E5_LARGE: ModelInfo(
                 model_id="Xenova/multilingual-e5-large",
                 onnx_file="onnx/model_quantized.onnx",
+            ),
+            TextModelType.INTFLOAT_MULTILINGUAL_E5_LARGE: ModelInfo(
+                model_id="intfloat/multilingual-e5-large"
+            ),
+            TextModelType.INTFLOAT_MULTILINGUAL_E5_LARGE_INSTRUCT: ModelInfo(
+                model_id="intfloat/multilingual-e5-large-instruct"
             ),
             TextModelType.SNOWFLAKE_ARCTIC_EMBED_L_V2: ModelInfo(
                 model_id="Snowflake/snowflake-arctic-embed-l-v2.0",
