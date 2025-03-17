@@ -24,7 +24,7 @@ logger.addFilter(LogFilter())
 
 # Application metadata
 __version__ = "1.0.0"
-__author__ = "lamhieu"
+__author__ = "bitsnaps"
 __description__ = "Fast, lightweight, multilingual embeddings solution."
 __metadata__ = {
     "project": "Lightweight Embeddings Service",
@@ -33,9 +33,9 @@ __metadata__ = {
         "Fast and efficient multilingual text and image embeddings service "
         "powered by sentence-transformers, supporting 100+ languages and multi-modal inputs"
     ),
-    "docs": "https://lamhieu-lightweight-embeddings.hf.space/docs",
-    "github": "https://github.com/lh0x00/lightweight-embeddings",
-    "spaces": "https://huggingface.co/spaces/lamhieu/lightweight-embeddings",
+    "docs": "https://bitsnaps-lightweight-embeddings.hf.space/docs",
+    "github": "https://github.com/bitsnaps/lightweight-embeddings",
+    "spaces": "https://huggingface.co/spaces/bitsnaps/lightweight-embeddings",
 }
 
 # Set your embeddings API URL here (change host/port if needed)
@@ -118,7 +118,7 @@ def call_stats_api_df() -> Tuple[pd.DataFrame, pd.DataFrame]:
     Calls the /v1/stats endpoint to retrieve analytics data.
     Returns two DataFrames (access_df, tokens_df) constructed from the JSON response.
     """
-    url = "https://lamhieu-lightweight-embeddings.hf.space/v1/stats"
+    url = "https://bitsnaps-lightweight-embeddings.hf.space/v1/stats"
 
     # Fetch stats
     response = requests.get(url)
@@ -170,6 +170,8 @@ def create_main_interface():
     """
     # Available model options for the dropdown
     model_options = [
+        "intfloat/multilingual-e5-large-instruct",
+        "intfloat/multilingual-e5-large",
         "snowflake-arctic-embed-l-v2.0",
         "bge-m3",
         "gte-multilingual-base",
@@ -218,7 +220,7 @@ def create_main_interface():
                     **Generate Embeddings (OpenAI compatible)**
                     ```bash
                     curl -X 'POST' \\
-                      'https://lamhieu-lightweight-embeddings.hf.space/v1/embeddings' \\
+                      'https://bitsnaps-lightweight-embeddings.hf.space/v1/embeddings' \\
                       -H 'accept: application/json' \\
                       -H 'Content-Type: application/json' \\
                       -d '{
@@ -230,7 +232,7 @@ def create_main_interface():
                     **Perform Ranking**
                     ```bash
                     curl -X 'POST' \\
-                      'https://lamhieu-lightweight-embeddings.hf.space/v1/rank' \\
+                      'https://bitsnaps-lightweight-embeddings.hf.space/v1/rank' \\
                       -H 'accept: application/json' \\
                       -H 'Content-Type: application/json' \\
                       -d '{
